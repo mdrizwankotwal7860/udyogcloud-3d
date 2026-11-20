@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UDYOGCLOUD – 3D Cloud Infrastructure Campus</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☁️</text></svg>">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="loading">
+        <div class="loader-content">
+            <h1>UDYOGCLOUD</h1>
+            <p>Affordable Cloud Infrastructure for Small Industries</p>
+            <div class="loader-bar"><div class="loader-progress"></div></div>
+        </div>
+    </div>
+
+    <canvas id="canvas"></canvas>
+
+    <div id="ui-overlay">
+        <!-- Top Center Screen-Space Selected Facility Heading -->
+        <div id="selected-facility-header">
+            <span class="facility-badge" id="facility-badge-text">CAMPUS OVERVIEW</span>
+            <h2 id="facility-title">UDYOGCLOUD INDUSTRIAL TECHNOLOGY CAMPUS</h2>
+            <p id="facility-subtitle">Complete 3D Industrial Cloud Ecosystem • 6 Connected Plants & Data Center Core</p>
+        </div>
+
+        <!-- Interactive Facility Inspection Controls (Visible when a facility is selected) -->
+        <div id="facility-inspector-toolbar" class="hidden">
+            <button id="btn-inspect-ext" class="inspector-btn active" title="Exterior 3/4 Perspective">🏛️ Exterior View</button>
+            <button id="btn-inspect-inside" class="inspector-btn" title="Cutaway Roof & View Interior">🔍 Explore Inside</button>
+            <button id="btn-inspect-xray" class="inspector-btn" title="Holographic Wireframe Inspection">👁️ X-Ray View</button>
+            <button id="btn-inspect-equip" class="inspector-btn" title="Focus & Inspect Machinery">⚙️ Equipment View</button>
+            <button id="btn-inspect-reset" class="inspector-btn" title="Reset Facility View">🔄 Reset View</button>
+            <button id="btn-inspect-back" class="inspector-btn exit" title="Return to Full Campus Overview">↩ Back to Campus</button>
+        </div>
+
+        <!-- Equipment Inspection Information Card (Opens on clicking machinery) -->
+        <div id="equipment-card" class="hidden">
+            <div class="equipment-card-header">
+                <span class="equipment-badge" id="equip-badge">FACILITY ASSET</span>
+                <button id="close-equip-card" class="close-card-btn">&times;</button>
+            </div>
+            <h3 id="equip-name">Enterprise Server Rack</h3>
+            <div class="equip-meta-row">
+                <span class="equip-label">FACILITY:</span>
+                <span id="equip-facility" class="equip-val">Data Center</span>
+            </div>
+            <div class="equip-meta-row">
+                <span class="equip-label">PRIMARY FUNCTION:</span>
+                <span id="equip-role" class="equip-val">Virtualization & Compute Blade Host</span>
+            </div>
+            <p id="equip-desc" class="equip-body">Houses 14x dual-socket enterprise compute blades running Linux KVM hypervisor.</p>
+            <div class="equip-connection-box">
+                <span class="equip-conn-title">🔗 UDYOGCLOUD CLOUD INTEGRATION:</span>
+                <p id="equip-conn" class="equip-conn-desc">Transmits real-time CPU/RAM telemetry and I/O metrics to the 24/7 Operations NOC.</p>
+            </div>
+        </div>
+
+        <div id="scene-nav">
+            <button id="play-btn" class="scene-btn play" title="Auto-play presentation">&#9654;</button>
+            <button class="scene-btn active" data-scene="0">Introduction</button>
+            <button class="scene-btn" data-scene="1">Industries</button>
+            <button class="scene-btn" data-scene="2">Registration</button>
+            <button class="scene-btn" data-scene="3">Services</button>
+            <button class="scene-btn" data-scene="4">Data Center</button>
+            <button class="scene-btn" data-scene="5">Connectivity</button>
+            <button class="scene-btn" data-scene="6">Operations</button>
+            <button class="scene-btn" data-scene="7">Ecosystem</button>
+        </div>
+
+        <div id="info-panel">
+            <h2 id="scene-title">UDYOGCLOUD</h2>
+            <p id="scene-desc">Affordable Cloud Infrastructure for Small Industries</p>
+        </div>
+
+        <div id="brand-badge">
+            <span class="brand-name">UDYOGCLOUD</span>
+            <span class="brand-tagline">Affordable Cloud Infrastructure for Small Industries</span>
+        </div>
+    </div>
+
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/"
+        }
+    }
+    </script>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
+

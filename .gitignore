@@ -1,0 +1,5 @@
+# Backups and temporary files
+backups/
+*.log
+.gemini/
+.vscode/
